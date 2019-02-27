@@ -1,0 +1,132 @@
+
+
+
+
+
+
+  <script>
+var checkExist = setInterval(function() {
+  var selector = document.querySelector('#arf_message_success > div:nth-child(1) > div:nth-child(1)');
+
+  if(selector!=null && selector.innerHTML.includes('Merci')){
+
+
+   ga('send', 'event', 'formulaire', 'envoyer');
+
+   clearInterval(checkExist);
+
+ } 
+}, 1000);  
+</script>
+
+ <script>
+ dataLayer.push({
+  'value': here you need to pout the variable of the value
+});
+</script>
+
+<script>
+jQuery('#quform-form-7bbaf6 > div > div > div > div > div.quform-element.quform-element-submit.quform-element-2_2.quform-cf.quform-button-style-theme > div.quform-button-submit.quform-button-submit-default.quform-button-submit-2_2 > button > span').one('click', function(e) {
+     ga('send', 'event', 'formulaire', 'envoyer');
+});
+
+</script>
+
+#quform-form-b6f074 > div > div.quform-success-message-animate > div > div.quform-success-message-content
+
+ <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
+ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], 
+ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src
+ ='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})
+ (window,document,'script','dataLayer','GTM-W86N2S9');</script>
+ 
+ 
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W86N2S9');</script>
+<!-- End Google Tag Manager -->
+
+
+  var newDate = new Date();
+  var hour = new Date().getHours();
+
+let changeColor = document.getElementById('changeColor');
+
+  chrome.storage.sync.get('color', function(data) {
+
+  
+    changeColor.style.backgroundColor = data.color;
+    changeColor.setAttribute('value', data.color);
+
+  });
+
+// changeColor.onclick = function(element) {
+
+//   if(newDate.getDay()==5 && hour==7){
+
+//     //alert("it is Tuesday the time is "+hour+newDate.getDay())
+   
+ 
+
+
+//     let color = element.target.value;
+//     alert(color)
+//     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+//       chrome.tabs.executeScript(
+//           tabs[0].id,
+//           {code: 'document.body.style.backgroundColor = "' + color + '";'});
+//     });
+
+//   }
+//   };
+
+
+
+gtag('event', 'purchase', {
+  'send_to': 'AW-123456789/AbC-D_efG-h12_34-567',
+  'value': dynqne, 
+  'currency': 'USD', 
+  'transaction_id': '12345' 
+});
+
+
+quform-success-message-icon
+
+
+
+<!-- Global site tag (gtag.js) - Google Ads: 921492843 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-921492843"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134005989-1');
+  gtag('config', 'AW-921492843');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100002226-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100002226-1');
+</script>
+
+
+
+
+<script defer>
+
+  gtag('event', 'pay', {
+  'event_category': 'achat',
+  'value':<?php echo $amount?>
+  });
+
+</script>
+
+

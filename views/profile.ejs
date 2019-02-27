@@ -1,0 +1,127 @@
+
+
+       <% include ./partials/header %>
+
+        <header id="header">
+            <h1>Welcome to your profile, <%= user.name %></h1>
+        </header>
+        
+        <main id="main">
+            
+            <img src="<%= user.thumbnail %>" />
+            
+         
+        </main>
+        
+         <div style="margin-left: 30px">
+             
+                <p>List of users: </p>
+                
+                 <section id="list"></section>
+                 
+                <section>
+                  <div id="change_username" data-value="<%= user.name %>">
+            	<input id="username" type="text" />
+            	<button id="send_username" type="button">Change username</button>
+                  </div>
+                </section>
+            
+                <section id="chatroom">
+                  <section id="feedback"></section>
+                </section>
+            
+                
+            
+                <section id="input_zone"> 
+                  <input id="message" class="vertical-align" type="text" />
+                  <button id="send_message" onclick="fun()"class="vertical-align" type="button">Send</button>
+                </section>
+    
+    </div>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119555282-2', 'auto');
+  ga('send', 'pageview');
+  ga('require', 'ecommerce');
+</script><!--layout-->
+
+
+<script>
+    ga('send', 'event', 'eventCategory', 'eventAction', 'eventLabel', 75.00) 
+</script>
+
+
+<script>
+ga('ecommerce:addTransaction', {
+  'id': '1234',                     // Transaction ID. Required.
+  'revenue': '11.99',               // Grand Total.
+  'shipping': '5',                  // Shipping.
+  'tax': '1.29'                     // Tax.
+});
+    
+</script>
+
+<script>
+ga('ecommerce:send');   
+    
+</script>
+
+
+    </body>
+</html>
+
+
+#get the temperature and Humidity from the DHT sensor
+[ temp,hum ] = grovepi.dht(dht_sensor_port,dht_sensor_type)
+
+
+print("tempereture =", temp, "C\thumidity =", hum,"%")
+
+#check if we have nans if so, then raise a type error exception                
+if isnan(temp) is True or isnan(hum) is True:
+                        
+        raise TypeError('nan error')
+                        
+#assign te temperature and humidity values into variables
+temp = str(temp)
+hum = str(hum)                 
+                    
+                  
+#lets make a json object out of the above values
+def weatherInfo():
+     return {"Temperature":temp," Humidity":hum}
+                                               
+#set up and return a python dictionary to hold all our json object
+def getReading():
+    dict={}
+    dict["data"]=weatherInfo()
+    return dict
+
+ #assign our dictionary method into a variable called dict
+try:
+    dict=getReading()
+    print("the dict is ", dict)   
+
+except:
+     json.JSONDecodeError                        
+     raise BadRequestError(
+        "Malformed request body. JSON is expected."
+    ) 
+
+#method to call to post to firebase
+def postFirebase(dic):                                             
+     firebase1.post("temp1",dict)
+                                       
+#call metthod to post data to firebase and pass it the dict data
+postFirebase(dict)
+time.sleep(5)
+                    
+#check if the data was sent, then print out its content
+if(postFirebase):
+    print "sent"
+
